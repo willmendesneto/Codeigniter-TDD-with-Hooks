@@ -309,7 +309,9 @@ class CI_Router {
 		}
 
 		// Nothing else to do at this point but show a 404
-		show_404($segments[0]);
+		if(ENVIRONMENT !== 'testing'){
+			show_404($segments[0]);
+		}
 	}
 
 	// --------------------------------------------------------------------
